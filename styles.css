@@ -1,0 +1,530 @@
+*, html{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+
+header{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+
+.side-bar{
+    padding-top: 30px;
+    width: 20vw;
+    background-color: #f1f7ec;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 3.5vh;
+    padding-left: 1.5vw;
+    font-size: 20px;
+    overflow-x: hidden;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 15px;
+}
+
+.side-bar h2{
+  padding: 3px;
+  color: hsl(256, 17%, 55%);
+  font-family: sans-serif;
+  font-size: 25px;
+}
+
+.side-bar li{
+    list-style: none;
+    display:inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.side-bar img{
+  width: 35px;
+  height: 35px;
+}
+
+
+.side-bar a{
+    color: #0e1618;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: sans-serif;
+
+}
+
+.side-bar a:hover{
+   transform: translateX(5px);
+   transition: 0.2s ease;
+   color: rgb(76, 76, 230);
+}
+
+.side-bar #xtra{
+  color: #0e1618;
+  text-decoration: none;
+  padding-top: 35vh;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  font-family: sans-serif;
+} 
+.side-bar #xtra .com-name{
+  color: hsl(281, 31%, 20%);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.current-display{
+   padding-left: 25vw;
+   padding-top: 2vh;
+   background-color: #ffffff;
+   padding-top: 10vh;
+   
+
+}
+
+.current-display h1{
+    color: hsl(306, 15%, 61%);
+    font-family: sans-serif;
+    font-size: 35px;
+    
+}
+
+
+
+.dashboard-section .big-3{
+  display: flex;
+  flex-direction: row;
+  
+  gap: 1vw;
+  padding-left: 10vw;
+}
+
+
+
+.dashboard-section #revenue-summary{
+  display: block;
+  background: rgba(225, 243, 225, 0.9); 
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(161, 156, 156, 0.15);
+  padding: 25px;
+  text-align: center;
+  width: 15vw;
+  transition: transform 0.3s, box-shadow 0.3s;
+  
+}
+.dashboard-section #expense-summary{
+  display: block;
+  background: rgba(209, 222, 241, 0.9);
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(161, 156, 156, 0.15);
+  padding: 25px;
+  text-align: center;
+  width: 15vw;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dashboard-section #balance-summary{
+  display: block;
+  background: rgba(240, 202, 201, 0.9); 
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(161, 156, 156, 0.15);
+  padding: 25px;
+  text-align: center;
+  width: 15vw;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#revenue-summary #total-revenue, #total-expense, #balance{
+  font-size: 30px;
+  font-family: sans-serif;
+
+}
+
+#revenue-summary #total-revenue{
+  color: rgba(46, 75, 46, 0.9); 
+}
+
+#expense-summary #total-expense{
+  color:rgba(36, 63, 102, 0.9);
+}
+
+#balance-summary #balance{
+  color: rgba(85, 21, 17, 0.9);
+}
+
+
+
+.dashboard-section{
+  display: none;
+}
+.dashboard-section.active{
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+
+
+.add-revenue-section{
+  display: none;
+}
+.add-revenue-section.active, .add-expense-section.active{
+  display: flex;
+  flex-direction: column;
+  width: 26vw;
+  background-color: whitesmoke;
+  padding: 7vh;
+  padding-left: 4vw;
+  border-radius: 10px;
+  margin-left: 15vw;
+  
+}
+
+.add-revenue-section.active #revenue-form, .add-expense-section.active #expense-form{
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.add-revenue-section.active #revenue-form input, .add-expense-section.active #expense-form input{
+  width: 25vw;
+  height: 7vh;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding-left: 10px;
+  margin:  8px 0;
+  font-size: 25px;
+  color:#3d466e;
+}
+
+.add-revenue-section.active #revenue-form input:hover, .add-expense-section.active #expense-form input:hover{
+  border-color: rgb(125, 77, 236);
+}
+
+.add-revenue-section.active #revenue-form input:focus, .add-expense-section.active #expense-form input:focus{
+  border-color: rgb(125, 77, 236);
+  outline: rgb(125, 77, 236);
+}
+
+
+.add-revenue-section.active #revenue-form input::placeholder, textarea::placeholder {
+  padding-left: 5%;
+  padding-top: 1%;
+  font-family: sans-serif;
+  font-size: large;
+  color:rgb(3, 26, 26);
+  font-style: italic;
+}
+
+.add-revenue-section.active #revenue-form textarea, .add-expense-section.active #expense-form textarea {
+  width: 24vw;
+  height: 15vh;
+  border-radius: 5px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 8px;
+  color:#77778b;
+}
+.add-revenue-section.active #revenue-form textarea:hover, textarea:focus{
+  border-color: rgb(125, 77, 236);
+  outline: rgb(125, 77, 236);
+}
+
+.add-revenue-section.active #revenue-form button{
+  width: 23vw;
+  height: 7vh;
+  margin-left: 4%;
+  padding: 10px;
+  background-color: #4caf50; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  
+  
+}
+
+.add-expense-section.active #expense-form button{
+  width: 23vw;
+  height: 7vh;
+  margin-left: 4%;
+  padding: 10px;
+  background-color: #5452b4; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.add-revenue-section.active #revenue-form button:hover{
+  background-color: #45a049; 
+}
+.add-expense-section.active #expense-form button:hover{
+  background-color: #191872;
+}
+
+
+.add-expense-section{
+  display: none;
+}
+.add-expense-section.active{
+  display: block;
+}
+
+.add-expense-section.active #expense-form textarea:hover, textarea:focus{
+  border-color: rgb(125, 77, 236);
+  outline: rgb(125, 77, 236);
+}
+
+.add-expense-section.active #expense-form input::placeholder, textarea::placeholder{
+  padding-left: 5%;
+  padding-top: 1%;
+  font-family: sans-serif;
+  font-size: large;
+  color:rgb(3, 26, 26);
+  font-style: italic;
+}
+
+
+/* reports section style */
+.reports-section{
+  display: none;
+}
+
+
+.reports-section.active {
+  display: block;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reports-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #444;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.revenue-reports,
+.expense-reports {
+  margin-bottom: 30px;
+}
+
+.revenue-reports p,
+.expense-reports p {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 4px solid #4caf50; 
+  border-radius: 4px;
+  color: #555;
+}
+
+.expense-reports p {
+  border-left-color: #f44336; 
+}
+
+span#date-time {
+  font-weight: bold;
+  color: #333;
+}
+
+span#amount {
+  font-weight: bold;
+  color: #4caf50; 
+}
+
+.expense-reports span#amount {
+  color: #f44336; 
+}
+
+span#description {
+  font-style: italic;
+  color: #777;
+}
+
+/*  end */
+
+
+
+/* statistics image style */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+
+.main-container {
+background: #f1f1f5;
+color: #0e1a5a;
+font-family: sans-serif;
+border-radius: 15px;
+border-bottom-left-radius: 50px;
+border-top-right-radius: 50px;
+padding: 20px;
+width: 50vw;
+height: 45vh;
+box-sizing: border-box;
+margin-left: 12vw;
+
+}
+
+.year-stats {
+white-space: nowrap;
+max-height: 175px;
+overflow: hidden;
+}
+
+.year-stats:hover {
+overflow-x: auto;
+}
+
+/* SCROLL BAR STYLE (ONLY WORKS IN CHROME) */
+/* Width */
+::-webkit-scrollbar {
+height: 5px;
+width: 100%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: #444e80;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #abafc6;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background: #5397d6;
+}
+
+.month-group {
+cursor: pointer;
+max-width: 400px;
+height: 110px;
+margin: 10px;
+display: inline-block;
+}
+
+.bar {
+background-color: #aa938c;
+width: 20px;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.month-group:hover .bar,
+.selected .bar {
+background: #7fdf53;
+}
+
+.month-group:hover p,
+.selected p {
+color: #6186d4;
+}
+
+.h-25 {
+height: 15%;
+}
+.h-50 {
+height: 45%;
+}
+.h-75 {
+height: 77%;
+}
+.h-100 {
+height: 65%;
+}
+
+.stats-info {
+margin-top: 15px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+position: relative;
+}
+
+.graph-container {
+position: relative;
+}
+
+.percent {
+display: block;
+width: 120px;
+height: 120px;
+}
+
+.circle {
+stroke: #915db1;
+fill: none;
+stroke-width: 3;
+}
+
+.circle:nth-child(2) {
+stroke: #e59f3c;
+}
+
+.circle:nth-child(3) {
+stroke: #5397d6;
+}
+
+.circle:nth-child(4) {
+stroke: #4cc790;
+}
+
+.graph-container p {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 12px;
+color: #444E80;
+text-align: center;
+font-size: 82%;
+}
+
+.graph-container .rev-text{
+color:#1f9429
+}
+
+.info p {
+font-size: 20px;
+margin-bottom: 10px;
+color:#29489c;
+font-weight: bolder;
+}
+
+.info span {
+font-size: 15px;
+color: #847899;
+font-weight: bold;
+}
+
+/*  end  */
+
+
+
